@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Portafolio | U. Manizales</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content anime-item">
+            <img src="https://cdn-icons-png.flaticon.com/512/2092/2092663.png" alt="Logo IoT" class="nav-logo">
+            <h1>Ecosistema IoT</h1>
+            <h2 id="sub-title">Panel de Control de Entregas</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="entregas" class="main-panel">
+            <div class="section-header anime-item">
+                <span class="section-tag">Dashboard</span>
+                <h3><i class="fas fa-layer-group"></i> Seguimiento de Proyectos</h3>
+            </div>
+            <div class="status-grid">
+                <div class="interactive-card module-card anime-item" onclick="showSection('logistica-transporte')">
+                    <div class="card-body">
+                        <span class="badge">Módulo 01</span>
+                        <h4>Logística y Transporte</h4>
+                        <p>Gestión de activos, telemetría y monitoreo de entorno en tiempo real.</p>
+                        <span class="view-more">Explorar Taller <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="interactive-card module-card anime-item" onclick="showSection('ra')">
+                    <div class="card-body">
+                        <span class="badge">Módulo 02</span>
+                        <h4>Realidad Aumentada</h4>
+                        <p>Simulación 3D y programación de hardware IoT.</p>
+                        <span class="view-more">Explorar Taller <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+                <div class="interactive-card module-card anime-item" onclick="showSection('ia-vision')">
+                    <div class="card-body">
+                        <span class="badge">Módulo 03</span>
+                        <h4>IA & Visión Artificial</h4>
+                        <p>Modelos de clasificación y experimentación con visión computacional.</p>
+                        <span class="view-more">Explorar Taller <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+        </section>
+
+        <section id="logistica-transporte" class="module-section hidden">
+            <nav class="section-nav anime-item nav-spacer">
+                <button class="btn-nav btn-animate" onclick="showSection('home')">
+                    <i class="fas fa-chevron-left"></i> Volver al Inicio
+                </button>
+            </nav>
+            <div class="section-content">
+                <div class="section-tag anime-item">Taller 01</div>
+                <h3 class="anime-item">Logística y Transporte Inteligente</h3>
+                <div class="grid-container-cls">
+                    <div class="info-card anime-item">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600" alt="Rastreo">
+                        <div class="card-info">
+                            <h4>Rastreo de Activos</h4>
+                            <p>Ubicación exacta y optimización de rutas dinámicas.</p>
+                        </div>
+                    </div>
+                    <div class="info-card anime-item">
+                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600" alt="Sensores">
+                        <div class="card-info">
+                            <h4>Monitoreo Remoto</h4>
+                            <p>Control de variables de entorno mediante sensores IoT.</p>
+                        </div>
+                    </div>
+                    <div class="info-card anime-item">
+                        <img src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?q=80&w=600" alt="Telemetría">
+                        <div class="card-info">
+                            <h4>Telemetría Avanzada</h4>
+                            <p>Análisis de datos para mantenimiento predictivo.</p>
+                        </div>
+                    </div>
+                    <div class="info-card anime-item">
+                        <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=600" alt="Gestión">
+                        <div class="card-info">
+                            <h4>Gestión de Inventario</h4>
+                            <p>Automatización y visibilidad total del stock.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-area anime-item">
+                    <h4>Evidencia Técnica</h4>
+                    <div class="short-wrapper">
+                        <div class="short-container">
+                            <iframe src="https://www.youtube.com/embed/OFxDAiL-8dc" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="emerging-tech anime-item">
+                    <h3><i class="fas fa-info-circle"></i> Ejemplo: Puertos Autónomos y Reparto</h3>
+                    <p>Terminales inteligentes con AGV (Automated Guided Vehicles) y tecnología 5G implementada en China.</p>
+                    <img src="https://i.blogs.es/348b0e/robovan-neolix/1200_800.jpeg" alt="Tecnología Autónoma China">
+                </div>
+
+
+                <div class="footer-nav anime-item nav-spacer">
+                    <button class="btn-nav btn-primary btn-animate" onclick="showSection('ra')">
+                        Siguiente: Realidad Aumentada <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="ra" class="module-section hidden">
+            <nav class="section-nav anime-item nav-spacer">
+                <button class="btn-nav btn-animate" onclick="showSection('home')">
+                    <i class="fas fa-chevron-left"></i> Volver al Inicio
+                </button>
+            </nav>
+            <div class="section-content">
+                <div class="section-tag anime-item">Taller 02</div>
+                <h3 class="anime-item">Realidad Aumentada e Interacción</h3>
+                <div class="grid-container-cls">
+                    <a href="https://edu.delightex.com/Auth" target="_blank" class="interactive-card with-img anime-item vr-card">
+                        <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=600" alt="VR CoSpaces">
+                        <div class="card-info">
+                            <i class="fas fa-vr-cardboard color-icon"></i>
+                            <h4>CoSpaces Edu</h4>
+                            <p>Entornos 3D interactivos.</p>
+                        </div>
+                    </a>
+                    <a href="https://makecode.microbit.org/#editor" target="_blank" class="interactive-card with-img anime-item">
+                        <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=600" alt="Microbit Hardware">
+                        <div class="card-info">
+                            <i class="fas fa-microchip color-icon"></i>
+                            <h4>Micro:bit</h4>
+                            <p>Lógica de hardware IoT.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="footer-nav anime-item nav-spacer">
+                    <button class="btn-nav btn-animate" onclick="showSection('logistica-transporte')">
+                        <i class="fas fa-arrow-left"></i> Anterior
+                    </button>
+                    <button class="btn-nav btn-primary btn-animate" onclick="showSection('ia-vision')">
+                        Siguiente: IA & Visión <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+<section id="ia-vision" class="module-section hidden">
+    <nav class="section-nav anime-item nav-spacer">
+        <button class="btn-nav btn-animate" onclick="showSection('home')">
+            <i class="fas fa-chevron-left"></i> Volver al Inicio
+        </button>
+    </nav>
+
+    <div class="section-content">
+        <div class="section-tag anime-item">Taller 03</div>
+        <h3 class="anime-item">Inteligencia Artificial aplicada al IoT</h3>
+
+        <div class="grid-container-cls">
+            
+            <div class="info-card anime-item">
+                <div class="card-info">
+                    <i class="fas fa-camera color-icon"></i>
+                    <h4>Visión Artificial</h4>
+                    <p>Clasificación de objetos por cámara.</p>
+                    <button class="btn-nav btn-primary btn-animate" onclick="initImage()">Activar Cámara</button>
+                    <div id="webcam-container" style="margin-top: 15px; display: flex; justify-content: center;"></div>
+                    <div id="label-container" style="margin-top: 10px; font-weight: bold; color: var(--secondary);"></div>
+                </div>
+            </div>
+
+            <div class="info-card anime-item">
+                <div class="card-info">
+                    <i class="fas fa-microphone color-icon"></i>
+                    <h4>Reconocimiento de Audio</h4>
+                    <p>Detección de comandos por voz o sonidos.</p>
+                    <button class="btn-nav btn-primary btn-animate" onclick="initAudio()">Escuchar Audio</button>
+                    <div id="audio-label-container" style="margin-top: 15px; font-weight: bold; color: var(--secondary);">Esperando...</div>
+                </div>
+            </div>
+
+            <div class="info-card anime-item">
+                <div class="card-info">
+                    <i class="fas fa-running color-icon"></i>
+                    <h4>Detección de Posturas</h4>
+                    <p>Análisis de puntos del cuerpo (esqueleto).</p>
+                    <button class="btn-nav btn-primary btn-animate" onclick="initPose()">Iniciar Pose</button>
+                    <div id="pose-canvas-container" style="margin-top: 15px; display: flex; justify-content: center;"></div>
+                    <div id="pose-label-container" style="margin-top: 10px; font-weight: bold; color: var(--secondary);"></div>
+                </div>
+            </div>
+        <div style="text-align: center; margin-bottom: 20px;">
+                    <button class="btn-nav btn-animate" onclick="stopAll()" style="background-color: #ff4d4d; color: white;">
+                    <i class="fas fa-stop-circle"></i> Detener Sensores
+                    </button>
+                </div>
+
+<!-- ACADEMIC NEXUS AI DASHBOARD -->
+<div id="academic-nexus" class="anime-item" style="margin-top:40px;">
+
+  <div class="nx-header">
+    <div class="nx-logo-group">
+      <div class="nx-logo-icon"><i class="fas fa-brain"></i></div>
+      <div>
+        <div class="nx-title">Academic Nexus AI</div>
+        <div class="nx-subtitle">Orquestador de Productividad · U. Manizales</div>
+      </div>
+    </div>
+    <div class="nx-status-pill">
+      <div class="nx-dot"></div>
+      NEXUS ONLINE
+    </div>
+  </div>
+
+  <div class="nx-panel-grid">
+    <div class="nx-metric accent-cyan">
+      <div class="nx-metric-label">Módulo Activo</div>
+      <div class="nx-metric-value cyan" style="font-size:1.1rem;">Taller 03</div>
+      <div class="nx-metric-sub">IA & Visión Artificial</div>
+    </div>
+    <div class="nx-metric accent-purple">
+      <div class="nx-metric-label">Mensajes</div>
+      <div class="nx-metric-value purple" id="nx-msg-count">0</div>
+      <div class="nx-metric-sub">Esta sesión</div>
+    </div>
+    <div class="nx-metric accent-green">
+      <div class="nx-metric-label">Modo</div>
+      <div class="nx-metric-value green" style="font-size:1rem;">Deep Work</div>
+      <div class="nx-metric-sub">2h bloques</div>
+    </div>
+  </div>
+
+  <hr class="nx-divider">
+
+  <div class="nx-config-bar">
+    <span class="nx-config-label"><i class="fas fa-key"></i> API Key</span>
+    <input type="password" class="nx-config-input" id="nx-api-key" placeholder="sk-ant-api… (solo en memoria del browser)"/>
+    <button class="nx-config-save" onclick="NexusAI.saveKey()"><i class="fas fa-check"></i> Guardar</button>
+    <button class="nx-clear-btn" onclick="NexusAI.clearChat()"><i class="fas fa-trash"></i> Limpiar</button>
+  </div>
+
+  <div class="nx-messages" id="nx-messages"></div>
+
+  <div class="nx-chat-wrapper">
+    <div class="nx-prompt-label"><i class="fas fa-terminal"></i> &nbsp;Consulta al Orquestador</div>
+    <div class="nx-input-row">
+      <textarea class="nx-textarea" id="nx-input" placeholder="Ej: Analiza el taller de IA y propón un slot de Deep Work para hoy…" rows="2" onkeydown="NexusAI.handleKey(event)"></textarea>
+      <button class="nx-send-btn" id="nx-send-btn" onclick="NexusAI.send()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div class="nx-quick-prompts">
+      <span class="nx-chip" onclick="NexusAI.quickSend('Analiza el taller de Diseño de Soluciones con IA y propón un slot de Deep Work para hoy')">📅 Slot Deep Work hoy</span>
+      <span class="nx-chip" onclick="NexusAI.quickSend('Dame un plan del día en tabla Markdown para estudiante de Ingeniería en U. Manizales')">📋 Plan del Día</span>
+      <span class="nx-chip" onclick="NexusAI.quickSend('Prioriza por urgencia e impacto: Python, Kotlin, SEO, Taller IoT, entrega de informe')">⚡ Priorizar tareas</span>
+      <span class="nx-chip" onclick="NexusAI.quickSend('Checklist técnico antes de presentar taller de IA y visión computacional')">🤖 Checklist técnico</span>
+      <span class="nx-chip" onclick="NexusAI.quickSend('Genera un resumen ejecutivo del ecosistema IoT para presentar en clase')">📝 Resumen IoT</span>
+    </div>
+  </div>
+
+</div>
+<!-- FIN ACADEMIC NEXUS AI -->
+
+        <div>
+        </div>
+                
+        </div> <div class="footer-nav anime-item nav-spacer">
+            <button class="btn-nav btn-animate" onclick="showSection('ra')">
+                <i class="fas fa-arrow-left"></i> Anterior: Realidad Aumentada
+            </button>
+        </div>
+    </div>
+</section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/speech@latest/dist/teachablemachine-speech.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@latest/dist/teachablemachine-pose.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
