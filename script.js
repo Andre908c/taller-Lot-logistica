@@ -182,23 +182,24 @@ Reglas de operación:
   const $ = id => document.getElementById(id);
 
   // --- API Key ---
-  function saveKey() {
-    const val = $('nx-api-key').value.trim();
-    if (!val.startsWith('sk-ant-')) {
-      $('nx-api-key').style.borderColor = '#ff4560';
-      $('nx-api-key').placeholder = '⚠ Debe comenzar con sk-ant-';
-      setTimeout(() => {
-        $('nx-api-key').style.borderColor = '';
-        $('nx-api-key').placeholder = 'sk-ant-api… (solo en memoria del browser)';
-      }, 2500);
-      return;
-    }
+function saveKey() {
+    const val = $('ghost-api-key')?.value?.trim();
+    if (!val) return;
+    
     apiKey = val;
-    $('nx-api-key').value = '';
-    $('nx-api-key').style.borderColor = '#00ff88';
-    $('nx-api-key').placeholder = '✓ API Key activa en memoria';
-    setTimeout(() => { $('nx-api-key').style.borderColor = ''; }, 2000);
-  }
+    const input = $('ghost-api-key');
+    const bar = $('ghost-key-bar');
+    if (input) {
+        input.value = '';
+        input.style.borderColor = '#00ff88';
+        input.placeholder = '✓ API Key activa en memoria';
+        setTimeout(() => { input.style.borderColor = ''; }, 2000);
+    }
+    if (bar) {
+        setTimeout(() => { bar.style.opacity = '0.4'; }, 2000);
+    }
+    appendMsg('ai', 'API Key activada. Sistema listo. Cuéntame tu situación académica actual.');
+} 
 
   // --- Limpiar chat ---
   function clearChat() {
@@ -273,12 +274,11 @@ Reglas de operación:
     const input = $('nx-input');
     const userText = input.value.trim();
     if (!userText) return;
-
-    if (!apiKey) {
-      appendMsg('ai', '⚠ **Sin API Key.** Ingresa tu Anthropic API Key arriba para activar el orquestador.');
-      return;
-    }
-
+    
+if (!apiKey) {
+    appendMsg('ai', '⚠ Ingresa tu API Key arriba y pulsa ACTIVAR primero.');
+    return;
+}
     appendMsg('user', userText);
     history.push({ role: 'user', content: userText });
     input.value = '';
@@ -289,29 +289,30 @@ Reglas de operación:
     btn.disabled = true;
     const thinkingEl = appendMsg('ai', '', true);
 
-    try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+try {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=TU_API_KEY_AQUI`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
-          messages: history
+            system_instruction: { parts: [{ text: GHOST_SYSTEM }] },
+            contents: history.map(m => ({
+                role: m.role === 'assistant' ? 'model' : 'user',
+                parts: [{ text: m.content }]
+            }))
         })
-      });
+    });
 
-      if (!response.ok) {
+    if (!response.ok) {
         const err = await response.json();
         throw new Error(err.error?.message || `HTTP ${response.status}`);
-      }
+    }
 
-      const data = await response.json();
-      const aiText = data.content.map(b => b.type === 'text' ? b.text : '').join('');
+    const data = await response.json();
+    const fullText = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Sin respuesta.';
 
       thinkingEl.remove();
-      appendMsg('ai', aiText);
-      history.push({ role: 'assistant', content: aiText });
+      appendMsg('ai', fullText);
+      history.push({ role: 'assistant', content: fullText });
       msgCount++;
       $('nx-msg-count').textContent = msgCount;
 
