@@ -267,6 +267,50 @@
 </div>
 <!-- FIN ACADEMIC NEXUS AI -->
 
+<!-- GHOSTMODE AI -->
+<div id="ghost-nexus" class="anime-item" style="margin-top:40px;">
+
+  <div class="nx-header">
+    <div class="nx-logo-group">
+      <div class="nx-logo-icon">👻</div>
+      <div>
+        <div class="nx-title">GhostMode AI</div>
+        <div class="nx-subtitle">Predictor de Rendimiento Académico</div>
+      </div>
+    </div>
+    <span class="ghost-risk-badge low" id="ghost-risk-badge">RIESGO: —</span>
+  </div>
+
+  <div class="nx-config-bar">
+    <span class="nx-config-label"><i class="fas fa-key"></i> Gemini Key</span>
+    <input type="password" class="nx-config-input" id="ghost-api-key" placeholder="Ingresa tu Gemini API Key…"/>
+    <button class="nx-config-save" onclick="GhostMode.saveKey()"><i class="fas fa-check"></i> Guardar</button>
+  </div>
+
+  <div class="nx-messages" id="ghost-messages">
+    <div class="msg ai">
+      <div class="msg-icon"><i class="fas fa-ghost"></i></div>
+      <div class="msg-bubble">Sistema activo. Ingresa tu Gemini Key y cuéntame tu situación académica.</div>
+    </div>
+  </div>
+
+  <div class="nx-chat-wrapper">
+    <div class="nx-prompt-label"><i class="fas fa-terminal"></i> &nbsp;Consulta a GhostMode</div>
+    <div class="nx-input-row">
+      <textarea class="nx-textarea" id="ghost-input" placeholder="Describe tu situación académica…" rows="2" onkeydown="GhostMode.handleKey(event)"></textarea>
+      <button class="nx-send-btn" id="ghost-send-btn" onclick="GhostMode.send()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+    <div class="nx-quick-prompts">
+      <span class="nx-chip" onclick="GhostMode.quickSend('Tengo un examen en 3 días y no he estudiado nada')">⚠ Sin estudiar</span>
+      <span class="nx-chip" onclick="GhostMode.quickSend('Llevo 3 materias perdidas este semestre')">📉 Materias en riesgo</span>
+      <span class="nx-chip" onclick="GhostMode.quickSend('Estudio 1h al día y tengo 5 tareas pendientes')">📊 Analizar semana</span>
+      <span class="nx-chip" onclick="GhostMode.quickSend('¿Cómo organizo mejor mi tiempo de estudio?')">🗓 Organización</span>
+    </div>
+  </div>
+
+</div>
+<!-- FIN GHOSTMODE AI -->
+
         <div>
         </div>
                 
